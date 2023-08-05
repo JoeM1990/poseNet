@@ -12,6 +12,9 @@ function setup() {
   
   poseNet.on('pose', function(results) {
     poses = results;
+
+    //console.log(poses[0].pose);
+
   });
   
   video.hide();
@@ -40,9 +43,14 @@ function drawKeypoints()  {
      
       if (keypoint.score > 0.2) {
         fill(255, 0, 0);
-        noStroke();
+        stroke(255, 255, 255);
+        strokeWeight(1);
         ellipse(keypoint.position.x, keypoint.position.y, 10, 10);
+
+        
       }
+
+     
     }
   }
 }
@@ -55,7 +63,8 @@ function drawSkeleton() {
     for (let j = 0; j < skeleton.length; j++) {
       let partA = skeleton[j][0];
       let partB = skeleton[j][1];
-      stroke(255, 0, 0);
+      stroke(255, 255, 255);
+      strokeWeight(5);
       line(partA.position.x, partA.position.y, partB.position.x, partB.position.y);
     }
   }
