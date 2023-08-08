@@ -21,7 +21,7 @@ function setup() {
 }
 
 function modelReady() {
-  select('#status').html('Model Loaded');
+  select('#status').html('Api chargé avec success');
 }
 
 function draw() {
